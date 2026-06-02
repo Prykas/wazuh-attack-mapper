@@ -24,10 +24,17 @@ def load_alerts(file_path: str) -> list[dict]:
     Raises:
         FileNotFoundError: Se o arquivo não existir.
         json.JSONDecodeError: Se o JSON for inválido.
+        ValueError: Se o JSON não contiver uma lista de alertas.
     """
 
     with open(file_path, "r", encoding="utf-8") as file:
         alerts = json.load(file)
+
+    # Validação do formato esperado
+    if not isinstance(alerts, list):
+        raise ValueError(
+            "O arquivo JSON deve conter uma lista de alertas."
+        )
 
     parsed_alerts = []
 
@@ -67,6 +74,9 @@ def main():
 
     except json.JSONDecodeError as e:
         print(f"Erro: JSON inválido. Detalhes: {e}")
+
+    except ValueError as e:
+        print(f"Erro de validação: {e}")
 
     except Exception as e:
         print(f"Erro inesperado: {e}")
