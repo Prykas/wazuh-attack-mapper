@@ -1,0 +1,61 @@
+{
+  "5710": {
+    "mitre_id": "T1110",
+    "mitre_name": "Brute Force",
+    "tactic": "Credential Access"
+  },
+
+  "5712": {
+    "mitre_id": "T1110",
+    "mitre_name": "Brute Force",
+    "tactic": "Credential Access"
+  },
+
+  "5763": {
+    "mitre_id": "T1078",
+    "mitre_name": "Valid Accounts",
+    "tactic": "Defense Evasion"
+  },
+
+  "554": {
+    "mitre_id": "T1068",
+    "mitre_name": "Exploitation for Privilege Escalation",
+    "tactic": "Privilege Escalation"
+  },
+
+  "31533": {
+    "mitre_id": "T1190",
+    "mitre_name": "Exploit Public-Facing Application",
+    "tactic": "Initial Access"
+  },
+
+  "31101": {
+    "mitre_id": "T1059",
+    "mitre_name": "Command and Scripting Interpreter",
+    "tactic": "Execution"
+  },
+
+  "31103": {
+    "mitre_id": "T1055",
+    "mitre_name": "Process Injection",
+    "tactic": "Defense Evasion"
+  },
+
+  "1002": {
+    "mitre_id": "T1082",
+    "mitre_name": "System Information Discovery",
+    "tactic": "Discovery"
+  },
+
+  "18107": {
+    "mitre_id": "T1046",
+    "mitre_name": "Network Service Discovery",
+    "tactic": "Discovery"
+  },
+
+  "18108": {
+    "mitre_id": "T1018",
+    "mitre_name": "Remote System Discovery",
+    "tactic": "Discovery"
+  }
+}
