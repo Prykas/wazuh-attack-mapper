@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-06-01T10:15:00Z",
+    "rule": {
+      "id": "5710",
+      "description": "sshd: authentication failed",
+      "groups": ["syslog", "sshd", "authentication_failed"]
+    },
+    "agent": {
+      "id": "001",
+      "name": "linux-server"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T10:16:00Z",
+    "rule": {
+      "id": "5712",
+      "description": "Multiple authentication failures detected",
+      "groups": ["authentication_failed", "bruteforce"]
+    },
+    "agent": {
+      "id": "001",
+      "name": "linux-server"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T10:20:00Z",
+    "rule": {
+      "id": "5763",
+      "description": "Successful SSH login",
+      "groups": ["sshd", "authentication_success"]
+    },
+    "agent": {
+      "id": "001",
+      "name": "linux-server"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T10:25:00Z",
+    "rule": {
+      "id": "554",
+      "description": "Possible privilege escalation detected",
+      "groups": ["privilege_escalation"]
+    },
+    "agent": {
+      "id": "002",
+      "name": "web-server"
+    }
+  },
+  {
+    "timestamp": "2026-06-01T10:30:00Z",
+    "rule": {
+      "id": "31533",
+      "description": "SQL Injection attempt detected",
+      "groups": ["web", "attack", "sql_injection"]
+    },
+    "agent": {
+      "id": "003",
+      "name": "apache-server"
+    }
+  }
+]
