@@ -30,21 +30,32 @@ def load_alerts(file_path: str) -> list[dict]:
     with open(file_path, "r", encoding="utf-8") as file:
         alerts = json.load(file)
 
-    # Validação do formato esperado
+    # O arquivo deve conter uma lista de alertas
     if not isinstance(alerts, list):
         raise ValueError(
             "O arquivo JSON deve conter uma lista de alertas."
         )
 
-    parsed_alerts = []
+    parsed_alerts: list[dict] = []
 
     for alert in alerts:
+
+        # Ignora registros inválidos
+        if not isinstance(alert, dict):
+            continue
+
         parsed_alerts.append(
             {
                 "rule_id": alert.get("rule", {}).get("id"),
-                "description": alert.get("rule", {}).get("description"),
-                "groups": alert.get("rule", {}).get("groups", []),
-                "agent": alert.get("agent", {}).get("name"),
+                "description": alert.get(
+                    "rule", {}
+                ).get("description"),
+                "groups": alert.get(
+                    "rule", {}
+                ).get("groups", []),
+                "agent": alert.get(
+                    "agent", {}
+                ).get("name"),
             }
         )
 
@@ -57,7 +68,12 @@ def main():
     """
 
     project_root = Path(__file__).parent.parent
-    sample_file = project_root / "examples" / "sample_alerts.json"
+
+    sample_file = (
+        project_root
+        / "examples"
+        / "sample_alerts.json"
+    )
 
     try:
         alerts = load_alerts(str(sample_file))
@@ -67,19 +83,32 @@ def main():
         for alert in alerts:
             print(alert)
 
-        print(f"\nTotal de alertas processados: {len(alerts)}")
+        print(
+            f"\nTotal de alertas processados: "
+            f"{len(alerts)}"
+        )
 
     except FileNotFoundError:
-        print(f"Erro: arquivo não encontrado: {sample_file}")
+        print(
+            f"Erro: arquivo não encontrado: "
+            f"{sample_file}"
+        )
 
     except json.JSONDecodeError as e:
-        print(f"Erro: JSON inválido. Detalhes: {e}")
+        print(
+            f"Erro: JSON inválido. "
+            f"Detalhes: {e}"
+        )
 
     except ValueError as e:
-        print(f"Erro de validação: {e}")
+        print(
+            f"Erro de validação: {e}"
+        )
 
     except Exception as e:
-        print(f"Erro inesperado: {e}")
+        print(
+            f"Erro inesperado: {e}"
+        )
 
 
 if __name__ == "__main__":
