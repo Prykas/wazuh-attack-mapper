@@ -1,0 +1,242 @@
+RELATO DE CRIAÇÃO ASSISTIDA POR IA
+
+Projeto: Wazuh ATT&CK Mapper
+
+Disciplina: Mestrado em Engenharia de Software
+
+Autor: Priscila Schafhauzer
+
+Data: Junho de 2026
+
+1. LINK DO REPOSITÓRIO
+
+Repositório GitHub:
+
+https://github.com/Prykas/wazuh-attack-mapper
+
+2. MODELOS DE IA UTILIZADOS
+
+Durante o desenvolvimento do artefato foram utilizados modelos de Inteligência Artificial Generativa para auxiliar nas etapas de análise, geração de código, documentação e revisão.
+
+Etapas apoiadas por IA:
+
+• Definição do escopo do projeto
+• Estruturação da arquitetura da solução
+• Geração de código-fonte Python
+• Geração de testes automatizados
+• Geração da documentação README.md
+• Revisão dos critérios de avaliação de artefatos científicos
+
+Ferramenta utilizada:
+
+• ChatGPT (OpenAI)
+
+3. DESCRIÇÃO DO PROBLEMA
+
+O projeto Wazuh ATT&CK Mapper foi concebido para resolver uma dificuldade comum enfrentada por analistas de SOC (Security Operations Center).
+
+Embora o Wazuh gere alertas de segurança contendo identificadores de regras, descrições e informações de contexto, nem sempre existe uma associação explícita e consolidada com as técnicas e táticas do framework MITRE ATT&CK.
+
+Como consequência, os analistas precisam interpretar manualmente cada alerta para compreender sua relação com comportamentos adversários conhecidos.
+
+O objetivo do artefato foi automatizar esse processo, enriquecendo alertas do Wazuh com informações do framework MITRE ATT&CK e produzindo relatórios estruturados.
+
+4. PROCESSO DE DESENVOLVIMENTO ASSISTIDO POR IA
+
+O desenvolvimento ocorreu de forma incremental.
+
+Inicialmente foi definido o problema de pesquisa e o nome do projeto:
+
+"Wazuh ATT&CK Mapper"
+
+Posteriormente foi criada a estrutura do repositório GitHub contendo os diretórios:
+
+• src
+• tests
+• examples
+• data
+• reports
+
+Em seguida foram desenvolvidos os componentes do sistema:
+
+4.1 Parser de Alertas
+
+Foi solicitado à IA a geração do módulo parser.py responsável por:
+
+• Ler arquivos JSON contendo alertas Wazuh
+• Extrair Rule ID
+• Extrair descrição
+• Extrair grupos
+• Extrair nome do agente
+
+O código gerado foi testado e refinado após validações realizadas manualmente.
+
+4.2 Base de Mapeamento MITRE
+
+Foi criada uma base de conhecimento local chamada mitre_mapping.json contendo mapeamentos entre Rule IDs do Wazuh e técnicas MITRE ATT&CK.
+
+Foram incluídas regras relacionadas a:
+
+• Brute Force
+• Valid Accounts
+• Privilege Escalation
+• SQL Injection
+• Discovery
+• Execution
+
+4.3 Mecanismo de Enriquecimento
+
+Foi desenvolvido o módulo mapper.py responsável por:
+
+• Ler o arquivo mitre_mapping.json
+• Localizar Rule IDs
+• Associar técnica ATT&CK
+• Associar tática ATT&CK
+• Tratar regras sem mapeamento
+
+4.4 Geração de Relatórios
+
+Foi desenvolvido o módulo report_generator.py responsável por:
+
+• Gerar relatórios CSV
+• Criar automaticamente o diretório reports
+• Exportar alertas enriquecidos
+
+4.5 Testes Automatizados
+
+Foram desenvolvidos testes utilizando pytest para validar:
+
+• Leitura de alertas
+• Estrutura dos dados processados
+• Mapeamentos MITRE válidos
+• Tratamento de regras desconhecidas
+
+5. EXEMPLOS DE PROMPTS UTILIZADOS
+
+Exemplo de prompt bem-sucedido:
+
+"Você é um desenvolvedor Python especialista em Cyber Security. Gere um arquivo parser.py completo para o projeto Wazuh ATT&CK Mapper."
+
+Resultado:
+
+• Código funcional
+• Compatível com Python 3.11+
+• Tratamento de exceções
+• Estrutura reutilizável
+
+Exemplo de prompt bem-sucedido:
+
+"Você é um desenvolvedor Python especialista em Cyber Security. Gere um arquivo mapper.py completo para o projeto Wazuh ATT&CK Mapper."
+
+Resultado:
+
+• Implementação correta do enriquecimento MITRE ATT&CK
+• Tratamento de regras não mapeadas
+
+Exemplo de prompt que exigiu refinamento:
+
+Solicitações iniciais para execução dos testes assumiam que Python e pytest já estavam instalados.
+
+Durante a execução foi identificado que o ambiente não possuía Python configurado adequadamente, exigindo instalação e ajustes manuais.
+
+6. DECISÕES TOMADAS PELO ALUNO
+
+Diversas decisões exigiram intervenção humana e não puderam ser resolvidas exclusivamente pela IA.
+
+Entre elas:
+
+• Escolha do tema do artefato
+• Definição do problema de pesquisa
+• Seleção das regras Wazuh utilizadas
+• Definição dos mapeamentos MITRE ATT&CK
+• Estrutura final do repositório
+• Validação dos resultados gerados
+• Correção do ambiente Python local
+• Instalação do pytest
+• Verificação da geração correta dos relatórios CSV
+
+Além disso, foi necessária análise humana para validar a coerência entre as regras do Wazuh e as técnicas MITRE ATT&CK selecionadas.
+
+7. REVISÃO DO ARTEFATO POR IA
+
+Após a conclusão do desenvolvimento, o artefato foi submetido a uma revisão assistida por IA considerando os critérios de avaliação de artefatos científicos.
+
+Critérios avaliados:
+
+Disponibilidade
+
+Resultado: Atendido
+
+Evidências:
+
+• Código disponível em repositório GitHub
+• Dados de exemplo incluídos
+• Documentação completa
+
+Funcionalidade
+
+Resultado: Atendido
+
+Evidências:
+
+• Parser executado com sucesso
+• Mapper executado com sucesso
+• Relatório CSV gerado com sucesso
+• Testes automatizados aprovados
+
+Sustentabilidade
+
+Resultado: Atendido
+
+Evidências:
+
+• Arquitetura modular
+• Código documentado
+• Estrutura organizada
+
+Reprodutibilidade
+
+Resultado: Atendido
+
+Evidências:
+
+• Dados incluídos no repositório
+• Passos de execução documentados
+• Testes automatizados disponíveis
+
+Melhorias sugeridas pela IA:
+
+• Criação de requirements.txt
+• Inclusão de arquivo LICENSE
+
+Ambas as recomendações foram implementadas.
+
+8. REFLEXÃO FINAL
+
+A utilização da Inteligência Artificial acelerou significativamente o desenvolvimento do artefato.
+
+Entre os principais benefícios observados destacam-se:
+
+• Geração rápida de código-fonte
+• Criação de documentação
+• Produção de testes automatizados
+• Identificação de melhorias arquiteturais
+• Apoio na depuração de erros
+
+Entretanto, a IA não substituiu a necessidade de análise crítica humana.
+
+Foi necessária intervenção manual para:
+
+• Definir o escopo do projeto
+• Validar a correção técnica dos resultados
+• Resolver problemas de ambiente
+• Interpretar mensagens de erro
+• Verificar a coerência dos mapeamentos MITRE ATT&CK
+
+Conclui-se que a IA atuou como um acelerador de produtividade e suporte técnico, enquanto as decisões de projeto, validação e garantia da qualidade permaneceram sob responsabilidade do autor.
+
+9. CONCLUSÃO
+
+O artefato Wazuh ATT&CK Mapper foi desenvolvido com sucesso utilizando um processo de criação assistida por Inteligência Artificial.
+
+O projeto atende aos requisitos definidos para a atividade, apresenta funcionamento comprovado por testes automatizados e demonstra uma aplicação prática de IA no desenvolvimento de software para Cibersegurança.
