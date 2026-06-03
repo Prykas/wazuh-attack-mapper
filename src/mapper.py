@@ -11,8 +11,10 @@ Compatível com Python 3.11+
 import json
 from pathlib import Path
 
-from parser import load_alerts
-
+try:
+    from parser import load_alerts
+except ImportError:
+    from src.parser import load_alerts
 
 def load_mapping(mapping_file: str) -> dict:
     """
