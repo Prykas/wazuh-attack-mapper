@@ -50,7 +50,7 @@ def enrich_alerts(alerts: list[dict], mapping: dict) -> list[dict]:
         list[dict]: Lista enriquecida.
     """
 
-    enriched_alerts = []
+    enriched_alerts: list[dict] = []
 
     for alert in alerts:
         rule_id = str(alert.get("rule_id"))
